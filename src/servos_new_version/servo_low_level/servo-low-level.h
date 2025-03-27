@@ -32,7 +32,7 @@ class ServoLL
         int angleToUs(int angleInDegrees);
 
         void writeMicroseconds(int microseconds);    
-        void writeTicks(int ticks);   
+        void writeTicks(uint32_t ticks);   
         
         int readMicroseconds();
         int readTicks();

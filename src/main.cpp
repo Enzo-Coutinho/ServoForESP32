@@ -1,18 +1,19 @@
-#include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+#include "servos_new_version/Servo.h"
+
+EasyServo servo1(Servo::PORTA_1);
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  servo1.setPosition(0);
+  delay(1000);
+  servo1.setPosition(90);
+  delay(1000);
+  servo1.setPosition(180);
+  delay(1000);
+  servo1.setPosition(270);
+  delay(1000);
 }

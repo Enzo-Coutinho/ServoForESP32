@@ -36,7 +36,7 @@ void ServoLL::writeMicroseconds(int microseconds)
     writeTicks(usToTicks(microseconds));  // convert to ticks
 }
 
-void ServoLL::writeTicks(int ticks)
+void ServoLL::writeTicks(uint32_t ticks)
 {
     currentTicks = ticks;
     ledcWrite(pin, ticks);
