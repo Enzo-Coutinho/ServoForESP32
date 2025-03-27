@@ -18,3 +18,8 @@ EasyServo::EasyServo(Servo::PortaServo entrada)
 
     servoLowLevel.attach(entrada, channel);
 }
+
+void EasyServo::setPosition(int angleInDegrees)
+{
+    servoLowLevel.writeAngleDegrees(angleInDegrees);
+}

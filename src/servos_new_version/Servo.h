@@ -15,7 +15,7 @@ namespace Servo {
 class EasyServo {
     public:
         EasyServo(Servo::PortaServo entrada);
-        void setPosition(int positionInDegrees);
+        void setPosition(int angleInDegrees);
         int getPosition();
     private:
         ServoLL servoLowLevel;
