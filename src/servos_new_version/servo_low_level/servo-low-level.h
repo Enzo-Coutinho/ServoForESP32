@@ -8,16 +8,29 @@ class ServoLL
 {
   public:
     void attach(int pin, int minPulse, int maxPulse, int channel);
-    void attach(int pin);
+    void attach(int pin, int channel);
+    void writeAngleDegrees(int angleInDegrees); 
+    int readAngleDegrees();
+
   private:
-    static const int ANGLE_MAX = 270;
-    static const int ANGLE_MIN = 0;
+    static const int ANGLE_MAX_DEGREES = 270;
+    static const int ANGLE_MIN_DEGREES = 0;
     static const int MIN_PULSE = 500;
     static const int MAX_PULSE = 2500; 
     static const int FREQUENCY = 50; 
     static const int RESOLUTION_BITS = 10;
+    static const int REFRESH_USEC = 20000;
+    static const int TIMER_WIDTH_TICKS = 1024;
+    
+    int maxAngle = 0;
+    int minAngle = 0;
+    int pin = -1;
+
     int usToTicks(int usec);
 	int ticksToUs(int ticks);
+    int angleToUs(int angleInDegrees);
+    void writeMicroseconds(int microseconds);    
+	void writeTicks(int ticks);    
 };
 
 
